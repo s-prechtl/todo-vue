@@ -1,13 +1,13 @@
 <template>
-  Lorem schas
+  <todo-listing></todo-listing>
 </template>
 
 <script>
-
+import todoListing from "@/components/todoListing";
 export default {
   name: 'App',
   components: {
-
+    todoListing
   }
 }
 </script>
