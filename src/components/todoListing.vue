@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "listingComponent"
+  name: "todoListing"
 }
 </script>
 
