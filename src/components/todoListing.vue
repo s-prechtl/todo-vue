@@ -1,5 +1,7 @@
 <template>
-  <p>{{json}}</p>
+  <div v-for="object in json">
+    {{object}}
+  </div>
 </template>
 
 <script>
@@ -16,8 +18,7 @@ export default {
 
   },
   mounted() {
-    console.log("bin do")
-    this.json = todoService.methods.getTodos()
+    this.json = JSON.parse(todoService.methods.getTodos())
   }
 }
 </script>
