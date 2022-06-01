@@ -1,23 +1,28 @@
 <script>
 
 export default {
-  name: "todoDetails",
+  name: "todoService",
 
   data() {
     return {
-      headers: {"Content-Type": "application/json"},
-      address: 'http://localhost:80',
+      headers: '',
+      address: '',
       todoURL: '/index.php/?option='
     }
   },
   methods: {
+    init() {
+      this.headers = {"Content-Type": "application/json"};
+      this.address = 'http://localhost:80';
+      this.todoURL = '/index.php/?option='
+    },
+
     buildURL(options) {
-      return this.address + this.todoURL + options
+      return this.address + this.todoURL + options;
     },
 
     async getTodos() {
-      // let options = "getTodos"
-      return ((await fetch('http://localhost:80/index.php/?option=getTodos')).json())
+      return ((await fetch(this.buildURL("getTodos"))).json())
     }
   }
 }
